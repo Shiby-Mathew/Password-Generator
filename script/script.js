@@ -13,6 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//function definition
 function generatePassword() {
   var length = Number(prompt("Enter a password length between 8 and 128"));
   var charType1 = confirm("Enter a character type: special");
@@ -20,15 +21,17 @@ function generatePassword() {
   var charType3 = confirm("Enter a character type: uppercase");
   var charType4 = confirm("Enter a character type: lowercase");
 
-  //An object created 
+  //An object created
   var charSets = {
     lowercase: "abcdefghijklmnopqrstuvwxyz",
     uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     numeric: "0123456789",
     special: "!@#$%^&*()+|<>?",
   };
-  //Checking Values true  and adding to charset
+
+  //Checking Values true  and adding to charSet
   var charSet = "";
+
   if (charType1) {
     charSet += charSets.special;
   }
@@ -42,12 +45,12 @@ function generatePassword() {
     charSet += charSets.lowercase;
   }
 
-  //Creating random number 
+  //Creating random number
 
-  var retVal = "";
+  var returnValue = "";
   for (var i = 0; i < length; i++) {
-    retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
-    console.log(retVal);
+    returnValue += charSet.charAt(Math.floor(Math.random() * charSet.length));
+    console.log(returnValue);
   }
-  return retVal;
+  return returnValue;
 }
