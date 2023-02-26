@@ -19,10 +19,10 @@ function generatePassword() {
     charLength = Number(prompt("Enter a password length between 8 and 128"));
   }
 
-  var charType1 = confirm("Enter a character type: special");
-  var charType2 = confirm("Enter a character type: numeric");
-  var charType3 = confirm("Enter a character type: uppercase");
-  var charType4 = confirm("Enter a character type: lowercase");
+  var charType1 = confirm("Do you want a Special character ? ");
+  var charType2 = confirm("Do you want a Numeric value ?");
+  var charType3 = confirm("Do you want a Uppercase character ? ");
+  var charType4 = confirm("Do you want a Lowercase character ? ");
 
   //An object created
   var charSets = {
@@ -59,6 +59,9 @@ function generatePassword() {
     returnValue += charSets.lowercase[charIndex];
 
     charSet += charSets.lowercase;
+  }
+  if (charSet == "") {
+    alert("Please select any of the options:");
   }
   //Creating Random value using random method
   var randomLen = charLength - returnValue.length;
