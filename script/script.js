@@ -37,7 +37,7 @@ function generatePassword() {
     special: "!@#$%^&*()+|<>?",
   };
 
-  //Checking Values true  and adding to charSet
+  
   var charSet = "";
   var returnValue = "";
 
