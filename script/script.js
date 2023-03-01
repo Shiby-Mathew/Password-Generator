@@ -14,11 +14,16 @@ generateBtn.addEventListener("click", writePassword);
 
 //function definition
 function generatePassword() {
-  var charLength = Number(prompt("Enter a password length between 8 and 128"));
-  while (charLength < 8 || charLength > 128) {
-    charLength = Number(prompt("Enter a password length between 8 and 128"));
+  var charLength = parseInt(
+    prompt("Enter a password length between 8 and 128")
+  );
+
+  //Checking charLength is less than 8,greater than 128 and is a valid number
+  while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
+    charLength = parseInt(prompt("Enter a password length between 8 and 128"));
   }
 
+  //Multiple prompt to accept different criteria
   var charType1 = confirm("Do you want a Special character ? ");
   var charType2 = confirm("Do you want a Numeric value ?");
   var charType3 = confirm("Do you want a Uppercase character ? ");
@@ -27,7 +32,7 @@ function generatePassword() {
   //An object created
   var charSets = {
     lowercase: "abcdefghijklmnopqrstuvwxyz",
-    uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    uppercase: "ABCDEFGHIJKLMNOPQRSTSUVWXYZ",
     numeric: "0123456789",
     special: "!@#$%^&*()+|<>?",
   };
@@ -35,7 +40,10 @@ function generatePassword() {
   //Checking Values true  and adding to charSet
   var charSet = "";
   var returnValue = "";
+
   //When the  confirm value is true, the return value will added with charSet
+  // returnValue save atleast one character from each criteria is selected(using random index numder)
+
   if (charType1) {
     var charIndex = Math.floor(Math.random() * charSets.special.length);
     returnValue += charSets.special[charIndex];
@@ -61,16 +69,17 @@ function generatePassword() {
     charSet += charSets.lowercase;
   }
   if (charSet == "") {
-    alert("Please select any of the options:");
+    alert("Please select any of the options and Try again");
   }
-  //Creating Random value using random method
+
+  //Reducing the total length from returnValue length(returnValue is saved value atleast one character from each criteria is selected )
   var randomLen = charLength - returnValue.length;
 
+  //Creating Random value using random method
   for (var i = 0; i < randomLen; i++) {
     returnValue += charSet.charAt(Math.floor(Math.random() * charSet.length));
   }
 
-  //This part will work when user enter any value less than 8 and greater than128
-
+  //Return value of  generatePassword() function
   return returnValue;
-}
+} // End of generatePassword() function

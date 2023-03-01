@@ -2,6 +2,7 @@
 
 ```
 The link for my deployed wesite can viewed here
+ https://shiby-mathew.github.io/Password-Generator/
 
 
 ```
@@ -10,7 +11,7 @@ The link for my deployed wesite can viewed here
 
 ```
 
-This application that enables users to generate random passwords based on the criteria that they’ve selected.This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code.When you click on Generate Password Button,then a prompt will ask for password's length and multiple confirm ask whether or not to include lowercase, uppercase, numeric, and/or special characters.Once the password is gerenated it will display on the page
+This application enables users to generate random passwords based on the criteria selected by user.This app will run in the browser and it will feature dynamically updated HTML along with CSS powered by JavaScript code.When you click on Generate Password Button,then multiple prompts will ask for - the password's length, lowercase, uppercase, numeric, and/or special characters. Once the password is gerenated it will display on the page
 
 ```
 
@@ -55,6 +56,3 @@ THEN the password is either displayed in an alert or written to the page
 The following image shows the web application's appearance :
 
 ![This is Password-Generator](./images/pic.png)
-
-
-
